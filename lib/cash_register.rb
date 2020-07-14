@@ -15,10 +15,11 @@ class CashRegister
     quantity.times do
     items << title
   end
+    last_transaction = price * quantity
   end
 
   def apply_discount
-    if discount != 0
+    if discount > 0
     self.total = (total * ((100.0 - discount)/100)).to_i
     "After the discount, the total comes to $#{self.total}."
   else
